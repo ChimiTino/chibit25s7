@@ -80,3 +80,14 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 1px;
   }
+   /* for viewing in mobile */
+  @media screen and (max-width: 600px) {
+
+    nav a, nav ul {
+      display: block;
+    }
+
+    .grid {
+      display: block;
+    }
+  }
