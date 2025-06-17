@@ -90,4 +90,7 @@ body {
     .grid {
       display: block;
     }
+     nav {
+      position: static;
+    }
   }
