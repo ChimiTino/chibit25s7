@@ -64,3 +64,19 @@ body {
     background: rgb(255, 255, 255);
     color: #000;
   }
+ article img {
+    float: left;
+    margin: 20px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  .photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+  }
