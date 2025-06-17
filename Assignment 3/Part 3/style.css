@@ -129,13 +129,13 @@ ul {
 nav li {
   list-style-type: none;
   margin-bottom: 2rem;
+}
 nav ul {
   padding-left: 0;
   margin-top: 0.8rem;
 }
 
 
-}
 nav li a:active {
   color: white;
   background: black;
