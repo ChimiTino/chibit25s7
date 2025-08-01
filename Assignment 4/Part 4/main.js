@@ -1,21 +1,18 @@
-// setup canvas
+// canvas setup
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+const width = canvas.width = window.innerWidth;
+const height = canvas.height = window.innerHeight;
 
-const canvas = document.querySelector("canvas");
-const ctx = canvas.getContext("2d");
-
-const width = (canvas.width = window.innerWidth);
-const height = (canvas.height = window.innerHeight);
-
-// function to generate random number
+const para = document.querySelector('#ballCount');
+let ballCount = 0;
 
 function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// function to generate random color
-
 function randomRGB() {
-  return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+  return `rgb(${random(0,255)},${random(0,255)},${random(0,255)})`;
 }
 
 class Shape {
@@ -26,6 +23,7 @@ class Shape {
     this.velY = velY;
   }
 }
+
 class Ball extends Shape {
   constructor(x, y, velX, velY, color, size) {
     super(x, y, velX, velY);
@@ -69,6 +67,7 @@ class Ball extends Shape {
     }
   }
 }
+
 class EvilCircle extends Shape {
   constructor(x, y) {
     super(x, y, 20, 20);
@@ -135,6 +134,7 @@ while (balls.length < 25) {
 }
 
 const evil = new EvilCircle(random(0, width), random(0, height));
+
 function loop() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
   ctx.fillRect(0, 0, width, height);
