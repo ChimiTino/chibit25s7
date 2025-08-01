@@ -1,58 +1,28 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Silly Story Generator</title>
+ <link rel="stylesheet" href="./style.css">
   <!-- Name: Tinotenda Chibi
     Student number: 101000797
     Date: 6-2025
     Description: Web Development
      -->
-    <title>Silly story generator</title>
+</head>
+<body>
 
-    <style>
-      body {
-        font-family: helvetica, sans-serif;
-        width: 350px;
-      }
+  <h1>Silly Story Generator</h1>
 
-      label {
-        font-weight: bold;
-      }
+  <label for="customname">Enter a custom name:</label>
+  <input type="text" id="customname" placeholder="Bob">
 
-      div {
-        padding-bottom: 20px;
-      }
+  <label><input type="radio" name="region" id="us" checked> US</label>
+  <label><input type="radio" name="region" id="uk"> UK</label>
 
-      input[type="text"] {
-        padding: 5px;
-        width: 150px;
-      }
+  <button class="randomize">Generate story</button>
 
-      p {
-        background: #ffc125;
-        color: #5e2612;
-        padding: 10px;
-        visibility: hidden;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div>
-      <label for="customname">Enter custom name:</label>
-      <input id="customname" type="text" placeholder="" />
-    </div>
-    <div>
-      <label for="us">US</label
-      ><input id="us" type="radio" name="ukus" value="us" checked />
-      <label for="uk">UK</label
-      ><input id="uk" type="radio" name="ukus" value="uk" />
-    </div>
-    <div>
-      <button class="randomize">Generate random story</button>
-    </div>
-    <!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
-    <p class="story"></p>
-  </body>
+  <p class="story"></p>
+<script src="main.js"></script>
+</body>
 </html>
