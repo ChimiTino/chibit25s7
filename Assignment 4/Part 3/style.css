@@ -6,11 +6,6 @@ html, body {
 }
 
 
-body {
-  overflow: hidden;
-  height: inherit;
-}
-
 h1 {
   position: absolute;
   top: 0;
