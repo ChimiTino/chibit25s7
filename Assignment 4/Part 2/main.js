@@ -13,3 +13,16 @@ const altText = {
   'pic4.jpg': 'Section of wall from a pharaoh\'s tomb',
   'pic5.jpg': 'Large moth on a leaf'
 };
+
+for (let i = 0; i < imageList.length; i++) {
+  const image = imageList[i];
+  const newImage = document.createElement('img');
+  newImage.setAttribute('src', `images/${image}`);
+  newImage.setAttribute('alt', altText[image]);
+  thumbBar.appendChild(newImage);
+
+  newImage.addEventListener('click', () => {
+    displayedImage.src = `images/${image}`;
+    displayedImage.alt = altText[image];
+  });
+}
