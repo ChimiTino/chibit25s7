@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Accessibility assessment</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7CSonsie+One" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="style.css">
 
   <!-- Name: Tinotenda Chibi
        Student number: 101000797
@@ -33,16 +33,16 @@
 
     <form class="search" role="search" aria-label="Site search">
       <label for="site-search" class="sr-only">Search the site:</label>
-      <input type="search" id="site-search" name="q" placeholder="Search query" aria-describedby="search-desc" />
-      <span id="search-desc" class="sr-only">Enter your search query and press the Search button</span>
+      <input type="search" id="site-search" name="q" placeholder="Search query">
       <button type="submit">Search</button>
     </form>
   </nav>
 
-  <main id="main-content" tabindex="-1" role="main">
+  <main id="main-content" tabindex="-1">
     <article>
+      <h2>The trouble with Bears</h2>
+
       <section>
-        <h2>The trouble with Bears</h2>
         <p>By Evan Wild</p>
         <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, The Jungle Book.</p>
         <p>So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions, and give you a real insight into the life of the bear.</p>
@@ -54,7 +54,7 @@
         <p>Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourage different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.</p>
       </section>
 
-      <table summary="Table describing different types of bears and their attributes" role="table" aria-describedby="bear-table-desc">
+      <table aria-describedby="bear-table-desc">
         <caption id="bear-table-desc">Types of Bears and their attributes</caption>
         <thead>
           <tr>
@@ -92,14 +92,14 @@
       </section>
 
       <figure>
-        <img src="media/wild-bear.jpg" alt="A brown bear standing on four legs in a flowing river. The bear is facing the camera with its head turned to its right." />
+        <img src="media/wild-bear.jpg" alt="A brown bear standing on four legs in a flowing river. The bear is facing the camera with its head turned to its right.">
         <figcaption>A wild bear in its natural habitat.</figcaption>
       </figure>
 
       <p>Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.</p>
 
       <figure>
-        <img src="media/urban-bear.jpg" alt="A grayscale image of a bear in a cage." />
+        <img src="media/urban-bear.jpg" alt="A grayscale image of a bear in a cage.">
         <figcaption>An urban bear in captivity.</figcaption>
       </figure>
 
@@ -113,14 +113,15 @@
 
       <section aria-label="Audio fact file about bear mating rituals">
         <audio controls>
-          <source src="media/bear.mp3" type="audio/mp3" />
-          <source src="media/bear.ogg" type="audio/ogg" />
+          <source src="media/bear.mp3" type="audio/mp3">
+          <source src="media/bear.ogg" type="audio/ogg">
           <p>Your browser does not support the audio element. <a href="media/bear.mp3">Download the audio file instead.</a></p>
         </audio>
 
         <div class="transcript-container">
           <button id="transcript-toggle" aria-expanded="false" aria-controls="transcript-text" aria-label="Show or hide audio transcript">Show transcript</button>
           <section class="transcript" id="transcript-text" hidden aria-hidden="true">
+            <h3>Audio transcript</h3>
             <p><strong>Narrator</strong>: This isn't really an audio fact file about bears. But it is, an audio file that you can transcribe.</p>
           </section>
         </div>
@@ -140,7 +141,7 @@
             <h2 id="comment-instructions">Add comment</h2>
             <div class="flex-pair">
               <label for="name">Your name:</label>
-              <input type="text" name="name" id="name" placeholder="Enter your name" aria-required="true" required />
+              <input type="text" name="name" id="name" placeholder="Enter your name" aria-required="true" required>
             </div>
             <div class="flex-pair">
               <label for="comment">Your comment:</label>
@@ -149,7 +150,7 @@
             <button type="submit">Submit comment</button>
           </form>
 
-          <section aria-live="polite" aria-relevant="additions">
+          <section aria-live="polite">
             <h2>Comments</h2>
             <ul class="comment-container">
               <li>
