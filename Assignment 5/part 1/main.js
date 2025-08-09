@@ -2,8 +2,6 @@
 const showHideBtn = document.querySelector('.show-hide');
 const commentWrapper = document.getElementById('comment-wrapper');
 
-commentWrapper.hidden = true;
-
 showHideBtn.addEventListener('click', () => {
   const expanded = showHideBtn.getAttribute('aria-expanded') === 'true';
   showHideBtn.setAttribute('aria-expanded', String(!expanded));
@@ -20,6 +18,7 @@ transcriptToggleBtn.addEventListener('click', () => {
   transcriptToggleBtn.setAttribute('aria-expanded', String(!expanded));
   transcriptToggleBtn.textContent = expanded ? 'Show transcript' : 'Hide transcript';
   transcriptSection.hidden = expanded;
+  transcriptSection.setAttribute('aria-hidden', String(expanded));
 });
 
 // Comment form submit
@@ -46,17 +45,17 @@ function submitComment() {
   const namePara = document.createElement('p');
   const commentPara = document.createElement('p');
 
-  // Add screen-reader-only labels to the new comments
-  const nameSpan = document.createElement('span');
-  nameSpan.className = 'sr-only';
-  nameSpan.textContent = 'Author: ';
-  namePara.appendChild(nameSpan);
+  // Add SR-only labels for screen readers
+  const nameLabel = document.createElement('span');
+  nameLabel.classList.add('sr-only');
+  nameLabel.textContent = 'Author: ';
+  namePara.appendChild(nameLabel);
   namePara.appendChild(document.createTextNode(nameValue));
 
-  const commentSpan = document.createElement('span');
-  commentSpan.className = 'sr-only';
-  commentSpan.textContent = 'Comment: ';
-  commentPara.appendChild(commentSpan);
+  const commentLabel = document.createElement('span');
+  commentLabel.classList.add('sr-only');
+  commentLabel.textContent = 'Comment: ';
+  commentPara.appendChild(commentLabel);
   commentPara.appendChild(document.createTextNode(commentValue));
 
   listItem.appendChild(namePara);
@@ -65,4 +64,5 @@ function submitComment() {
 
   nameField.value = '';
   commentField.value = '';
+  nameField.focus();
 }
