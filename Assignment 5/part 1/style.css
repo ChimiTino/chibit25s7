@@ -16,7 +16,7 @@ body {
   color: #2a2a2a;
 }
 
-/* || typography */
+/* Typography */
 h1, h2, h3 {
   font-family: 'Sonsie One', cursive;
   color: #2a2a2a;
@@ -55,7 +55,6 @@ p, input, li, table, label, textarea, button {
   clip: rect(0,0,0,0) !important;
   border: 0 !important;
 }
-
 
 nav, article, footer, .secondary {
   background-color: #008000;
@@ -194,6 +193,16 @@ audio {
   max-width: 500px;
 }
 
+/* Accessibility focus styles */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid #f90;
+  outline-offset: 2px;
+}
+
+/* Comments */
 .comments {
   background-color: #def;
   padding: 10px;
