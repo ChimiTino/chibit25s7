@@ -1,46 +1,57 @@
-// functionality for showing/hiding the comments section
-
+// Show/hide comments button
 const showHideBtn = document.querySelector('.show-hide');
-const commentWrapper = document.querySelector('.comment-wrapper');
+const commentWrapper = document.getElementById('comment-wrapper');
 
-commentWrapper.style.display = 'none';
+commentWrapper.hidden = true;
 
-showHideBtn.onclick = function() {
-  let showHideText = showHideBtn.textContent;
-  if(showHideText === 'Show comments') {
-    showHideBtn.textContent = 'Hide comments';
-    commentWrapper.style.display = 'block';
-  } else {
-    showHideBtn.textContent = 'Show comments';
-    commentWrapper.style.display = 'none';
-  }
-};
+showHideBtn.addEventListener('click', () => {
+  const expanded = showHideBtn.getAttribute('aria-expanded') === 'true';
+  showHideBtn.setAttribute('aria-expanded', String(!expanded));
+  showHideBtn.textContent = expanded ? 'Show comments' : 'Hide comments';
+  commentWrapper.hidden = expanded;
+});
 
-// functionality for adding a new comment via the comments form
+// Audio transcript toggle
+const transcriptToggleBtn = document.getElementById('transcript-toggle');
+const transcriptSection = document.getElementById('transcript-text');
 
+transcriptToggleBtn.addEventListener('click', () => {
+  const expanded = transcriptToggleBtn.getAttribute('aria-expanded') === 'true';
+  transcriptToggleBtn.setAttribute('aria-expanded', String(!expanded));
+  transcriptToggleBtn.textContent = expanded ? 'Show transcript' : 'Hide transcript';
+  transcriptSection.hidden = expanded;
+});
+
+// Comment form submit
 const form = document.querySelector('.comment-form');
 const nameField = document.querySelector('#name');
 const commentField = document.querySelector('#comment');
 const list = document.querySelector('.comment-container');
 
-form.onsubmit = function(e) {
+form.addEventListener('submit', e => {
   e.preventDefault();
   submitComment();
-};
+});
 
 function submitComment() {
   const listItem = document.createElement('li');
   const namePara = document.createElement('p');
   const commentPara = document.createElement('p');
-  const nameValue = nameField.value;
-  const commentValue = commentField.value;
+
+  const nameValue = nameField.value.trim();
+  const commentValue = commentField.value.trim();
+
+  if (!nameValue || !commentValue) {
+    alert('Please enter both your name and comment.');
+    return;
+  }
 
   namePara.textContent = nameValue;
   commentPara.textContent = commentValue;
 
-  list.appendChild(listItem);
   listItem.appendChild(namePara);
   listItem.appendChild(commentPara);
+  list.appendChild(listItem);
 
   nameField.value = '';
   commentField.value = '';
