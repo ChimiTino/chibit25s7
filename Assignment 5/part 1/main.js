@@ -34,10 +34,6 @@ form.addEventListener('submit', e => {
 });
 
 function submitComment() {
-  const listItem = document.createElement('li');
-  const namePara = document.createElement('p');
-  const commentPara = document.createElement('p');
-
   const nameValue = nameField.value.trim();
   const commentValue = commentField.value.trim();
 
@@ -46,8 +42,22 @@ function submitComment() {
     return;
   }
 
-  namePara.textContent = nameValue;
-  commentPara.textContent = commentValue;
+  const listItem = document.createElement('li');
+  const namePara = document.createElement('p');
+  const commentPara = document.createElement('p');
+
+  // Add screen-reader-only labels to the new comments
+  const nameSpan = document.createElement('span');
+  nameSpan.className = 'sr-only';
+  nameSpan.textContent = 'Author: ';
+  namePara.appendChild(nameSpan);
+  namePara.appendChild(document.createTextNode(nameValue));
+
+  const commentSpan = document.createElement('span');
+  commentSpan.className = 'sr-only';
+  commentSpan.textContent = 'Comment: ';
+  commentPara.appendChild(commentSpan);
+  commentPara.appendChild(document.createTextNode(commentValue));
 
   listItem.appendChild(namePara);
   listItem.appendChild(commentPara);
